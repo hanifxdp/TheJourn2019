@@ -1,0 +1,98 @@
+body{
+	font-family: DM Serif Display, serif;
+}
+#container {width: 1100px;height: auto;margin: 0px auto;padding: 10px;}
+
+#container #header {
+    
+margin-top: 40px;
+}
+
+#container #header #menu {overflow: hidden;background: white;padding: 5px 10px;float: left;color: white;margin-top: 25px;}
+
+#container #header #menu a {
+    padding-right: 50px;
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    margin-top: 5px;
+}
+#container #content {
+    padding: 10px 10px;
+    overflow: hidden;
+}
+
+
+img.images_header {
+    width: 250px;
+    margin-top: -100px;
+    margin-left: -410px;
+}
+
+#container #header #menu ul {
+    display: inline-flex;
+}
+
+#container #header #menu ul li span:hover 
+{
+    color:gray;
+    
+}
+#container-user-akses {
+    width: 350px;
+    height: auto;
+    margin: 50px auto;
+}
+
+.element-form label {
+    display: block;
+    font-weight: bold;
+    color:black;
+}
+
+.element-form span {
+    display: block;
+}
+
+.element-form span input[type="text"],
+.element-form span input[type="password"],
+.element-form span textarea,
+.element-form span select {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.element-from span input[type="submit"] {}
+
+.elemnt-form span input[type="submit"] {
+    background: #c4cace;
+    border: none;
+    color:black;
+    padding: 7px 20px;
+    border-radius: 3px;
+    font-size: 9px;
+    cursor: pointer;
+}
+.elemnt-form span input[type="submit"]:hover{
+	background:orange;
+}
+
+.elemnt-form label {
+    display: block;
+    font-weight: bold;
+}
+
+.element-form {
+    margin-bottom: 15px;
+}
+
+.elemnt-form {
+    margin-bottom: 15px;
+}
+
+.element-form span input[type="submit"]:hover{
+	background: gray;
+}
+
+nav {}
