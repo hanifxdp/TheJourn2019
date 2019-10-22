@@ -16,20 +16,11 @@
                     <li><a href="<?php echo base_url(); ?>travel" class="button"><span>Travel</span></a>
                
                     </li>
-                <div class="login">
-                    <li><a href="<?php echo base_url(); ?>login" class="button"><span>Login</span></a>
-
-                    </li>
-                    <li><a href="<?php echo base_url(); ?>login/registration" class="button"><span>Register</span></a>
-
-                    </li>
-                </div>
-
                 </ul>
-             </nav>
-         </div>
-    <div id="content">
+            </nav>
 
+        </div>
     </div>
 </div>
-</div>
+        
+    

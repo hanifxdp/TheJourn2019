@@ -13,6 +13,7 @@ class login extends CI_Controller {
 		if($this->form_validation->run() == false){
 			$data['judul']='Login';
 			$this->load->view('template/header',$data);
+			$this->load->view('home/halaman_utama');
 			$this->load->view('auth/login_page');
 			$this->load->view('template/footer');
 
@@ -30,12 +31,16 @@ class login extends CI_Controller {
 		if($user){
 			if($user['status'] == "on"){
 				if(password_verify($password,$user['password'])){
+					$data =[
+						'email'=> $user['email'],
+						'level'=> $user['level'],
+						'status'=> $user['status']
+					];
+					$this->session->set_userdata($data);
 					redirect('Home');
 				}else{
 					redirect('login');
 				}
-			}else{
-				redirect('login');
 			}
 		}else{
 			$this->session->set_flashdata('message','<p>Email not registered </p>');
@@ -52,6 +57,7 @@ class login extends CI_Controller {
 		if($this->form_validation->run()== false){
 			$data['judul']='Registration';
 			$this->load->view('template/header',$data);
+			$this->load->view('home/halaman_utama');
 			$this->load->view('auth/register');
 			$this->load->view('template/footer');
 
@@ -68,7 +74,13 @@ class login extends CI_Controller {
 	
 			redirect('login');
 		}
-
+		
+	}
+	public function logout(){
+		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('level');
+		$this->session->unset_userdata('status');
+		redirect('login');
 	}
 
 
