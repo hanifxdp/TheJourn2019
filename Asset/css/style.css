@@ -102,7 +102,7 @@ img.images_header {
     display: flex;
     justify-content: center;
     align-items: center;
-    display:none;
+    /* display:none; */
 }
 .modal-content{
     width: 500px;
@@ -128,4 +128,20 @@ input{
     color: black;
     transform: rotate(45deg);
     cursor: pointer;
+}
+.tombol{
+	padding: 8px 15px;
+	border-radius: 3px;
+	background: #ECF0F1;
+	border: none;
+	color: #232323;
+	font-size: 12pt;
+}
+ 
+.kotak{
+	margin: 20px auto;
+	background: #1ABC9C;
+	width: 900px;	
+	padding: 20px 50px 50px 50px;
+	border-radius: 3px;
 }

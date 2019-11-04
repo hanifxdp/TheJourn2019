@@ -32,6 +32,7 @@ class login extends CI_Controller {
 			if($user['status'] == "on"){
 				if(password_verify($password,$user['password'])){
 					$data =[
+						'user_id'=>$user['user_id'],
 						'email'=> $user['email'],
 						'level'=> $user['level'],
 						'status'=> $user['status']
