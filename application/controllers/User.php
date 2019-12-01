@@ -15,9 +15,9 @@ class User extends CI_Controller{
     }
     public function profile(){
         
-        $data['judul']='Edit profile';
-        $this->load->view('template/header',$data);
-        $this->load->view('user/profile');
+        // $data['judul']='Edit profile';
+        // $this->load->view('template/header',$data);
+        // $this->load->view('user/profile');
         $data['user']=$this->db->get_where('user',['email'=>
         $this->session->userdata('email')])->row_array();
         $this->form_validation->set_rules('nama_baru','Nama Baru',

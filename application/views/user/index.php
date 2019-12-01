@@ -55,6 +55,9 @@
                                         <div class="edit-profile">
                                             <a class="edit" href="<?php base_url()?>User/changepassword" rel="noopener">change Password</a>
                                         </div>
+                                        <div class="edit-profile">
+                                            <a class="edit" href="<?php base_url()?>konten" rel="noopener">New Post</a>
+                                        </div>
                                     </div>
                                     <div class="short-bio">
                                         <p class="bio"><?php echo $data['user']['bio'];?> </p>

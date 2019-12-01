@@ -38,24 +38,32 @@ class konten extends CI_Controller {
 		$date=date("Y-m-d h:i:s",$time);
 		$this->form_validation->set_rules('post','Post','required');
 		
-			
-			$data =[
-				'konten'=> $this->input->post('post'),
-				'tanggal_post'=>$date,
-				'id_konten'=>'1',
-				'user_id'=>$this->session->userdata('user_id'),
-				'title'=>$this->input->post('judul'),
-				
-			];
+		if($this->input->post('subject')=='food'){
+			$subject='1';
+		}else if($this->input->post('subject')=='lifestyle'){
+			$subject='2';
+		}
+		else{
+			$subject='3';
+		}
 		
-			$data1=[
-				'subject'=> $this->input->post('subject'),
-				'tanggal'=>$date,
-				'user_id'=>$this->session->userdata('user_id')
-			];
+		$data1=[
+			'subject'=> $this->input->post('subject'),
+			'tanggal'=>$date,
+			'user_id'=>$this->session->userdata('user_id'),
+			'id_subject'=>$subject
+		];
+		$this->db->insert('konten', $data1);
+		$data =[
+			'konten'=> $this->input->post('post'),
+			'tanggal_post'=>$date,
+			'user_id'=>$this->session->userdata('user_id'),
+			'title'=>$this->input->post('judul'),
+			'id_konten'=> $this->db->insert_id()
+			
+		];
 		
 			$this->db->insert('post', $data);
-			$this->db->insert('konten', $data1);
 			redirect('konten');
 
 	}
