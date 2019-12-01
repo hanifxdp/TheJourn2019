@@ -10,6 +10,7 @@ class konten extends CI_Controller {
 	{
 		$data['judul']='Konten';
 		$this->load->view('template/header',$data);
+		$this->load->view('home/halaman_utama');
 		$this->load->view('konten/postKonten');
 		$this->load->view('template/footer');
 	}
@@ -22,7 +23,7 @@ class konten extends CI_Controller {
 
 	public function post()
 	{
-		$this->load->library('../controllers/login');
+		// $this->load->library('../controllers/login');
 		
 		$time=time();
 		$date=date("Y-m-d h:i:s",$time);
@@ -32,7 +33,7 @@ class konten extends CI_Controller {
 				'konten'=> $this->input->post('post'),
 				'tanggal_post'=>$date,
 				'id_konten'=>'1',
-				'user_id'=> $this->user_id
+				'user_id'=>$this->session->userdata('user_id')
 			];
 		
 			$this->db->insert('post', $data);

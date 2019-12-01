@@ -1,4 +1,8 @@
 
+      
+        </div>
+    </div>
+</div>
 
 	<div class="bg-modal">
 		<div class="modal-content">
