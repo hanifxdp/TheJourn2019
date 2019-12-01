@@ -28,11 +28,11 @@
                         </div>
                         <div class="name-profile">
                             <label>Name</label><br>
-                            <input type="text" placeholder="Your Name" class="your-name">
+                            <input type="text" placeholder="Your Name" class="your-name" name="nama_baru">
                         </div>
                         <div class="bio-profile">
                             <label>Bio</label>
-                            <input type="text" placeholder="Your bio">
+                            <input type="text" placeholder="Your bio" name="bio_baru">
                         </div>
                       
                         

@@ -15,7 +15,7 @@
                     <img class="logo" src="<?php echo base_url(); ?>Asset/images/judul.png" width="272" height="50">
                 </a>
                 </header>
-                <form method="post" action="<?= base_url('User/profile');?>">
+                <form method="post" action="<?= base_url('User/changepassword');?>">
                 <main class="full-body">
                     <div class="main-container">
                         <h1 class="tulisan-edit-profile">
