@@ -69,7 +69,8 @@ class login extends CI_Controller {
 				'nama'=> htmlspecialchars($this->input->post('nama_lengkap',true)),
 				'email'=> htmlspecialchars($this->input->post('email',true)),
 				'password'=> password_hash($this->input->post('password'),PASSWORD_DEFAULT),
-				'status' => "on"
+				'status' => "on",
+				'bio'=>htmlspecialchars($this->input->post('bio',true))
 			];
 			$this->db->insert('user', $data);
 	

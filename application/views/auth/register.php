@@ -12,6 +12,10 @@
 			<span><input type="text" name="email" value="<?= set_value('email');?>"/></span>
 			<small><?=  form_error('email');?></small>
 		</div>
+		<div class="element-form"> 
+			<label>Bio</label>
+			<span><input type="text" name="bio" /></span>
+		</div>
 
 		<div class="element-form"> 
 			<label>Password</label>

@@ -11,6 +11,15 @@ class konten extends CI_Controller {
 		$data['judul']='Konten';
 		$this->load->view('template/header',$data);
 		$this->load->view('home/halaman_utama');
+		if($this->session->userdata('status')=='on'){
+			$this->load->view('template/logout_bar');
+		}
+	else
+	{
+		$this->load->view('template/login_bar');
+		
+	}
+
 		$this->load->view('konten/postKonten');
 		$this->load->view('template/footer');
 	}
@@ -29,14 +38,24 @@ class konten extends CI_Controller {
 		$date=date("Y-m-d h:i:s",$time);
 		$this->form_validation->set_rules('post','Post','required');
 		
+			
 			$data =[
 				'konten'=> $this->input->post('post'),
 				'tanggal_post'=>$date,
 				'id_konten'=>'1',
+				'user_id'=>$this->session->userdata('user_id'),
+				'title'=>$this->input->post('judul'),
+				
+			];
+		
+			$data1=[
+				'subject'=> $this->input->post('subject'),
+				'tanggal'=>$date,
 				'user_id'=>$this->session->userdata('user_id')
 			];
 		
 			$this->db->insert('post', $data);
+			$this->db->insert('konten', $data1);
 			redirect('konten');
 
 	}

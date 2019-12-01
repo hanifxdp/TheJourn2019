@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="<?php echo base_url()?>Asset/css/style.css" type="text/css" rel="stylesheet" />
+        <link href="<?php echo base_url()?>ckeditor/plugins/easyimage/styles/easyimage.css" type="text/css" rel="stylesheet" />
+        <script src="<?= base_url()?>ckeditor/ckeditor.js"></script>
+        <script src="https://kit.fontawesome.com/7d908fb9a4.js" crossorigin="anonymous"></script>
         <title><?=$judul;?></title>
     </head>
     <body>
@@ -27,24 +31,6 @@
                                                 </div>
                                             </div>
                                             <div class="ano-in-acc">
-                                                <span class="acc-span">
-                                                    <div class="cl-acc">
-                                                        <div class="clc-acc">
-                                                            <div class="notif">
-                                                                <button class="bt-notif">
-                
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="clcc-acc">
-                                                            <div class="profile">
-                                                                <div class="profile-in">
-                                                                    <button class="bt-profile"></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -64,11 +50,14 @@
                                         ?>
                                         <h1 class="name-name"><?php echo $data['user']['nama'];?></h1>
                                         <div class="edit-profile">
-                                            <a class="edit" href="#" rel="noopener">edit profile</a>
+                                            <a class="edit" href="<?php base_url()?>User/profile" rel="noopener">edit profile</a>
+                                        </div>
+                                        <div class="edit-profile">
+                                            <a class="edit" href="<?php base_url()?>User/changepassword" rel="noopener">change Password</a>
                                         </div>
                                     </div>
                                     <div class="short-bio">
-                                        <p class="bio">kuda liar balapan </p>
+                                        <p class="bio"><?php echo $data['user']['bio'];?> </p>
                                     </div>
                                     <span></span>
                                     <div class="following">
@@ -84,7 +73,13 @@
                             </div>
                         </div>
                         <div class="content-post">
-                            <h3 class="info-post">samsepi0l hasn’t been active on Medium yet. Check back later to see their stories, claps, and highlights.</h3>
+                            <h3 class="info-post">
+                                <?php
+                                     $data['post']=$this->db->get_where('post', ['user_id'=>
+                                     $this->session->userdata('user_id')])->row_array();
+                                     echo $data['post']['konten'];
+                                ?>
+                            </h3>
                         </div>
                 </section>
             </div>
