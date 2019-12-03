@@ -5,17 +5,19 @@ class User extends CI_Controller{
         parent::__construct();
         $this->load->library('form_validation');
         
+        $this->load->model('PostModel');
+        
     }
     public function index(){
-        // $data['user']=$this->db->get_where('user', ['email'=>
-        // $this->session->userdata('email')])->row_array();
+        $data['user']=$this->db->get_where('user', ['email'=>
+        $this->session->userdata('email')])->row_array();
         // echo 'User '.$data['user']['nama'];
+        $data['posts']=$this->PostModel->get_posts();
         $data['judul']='User';
         $this->load->view('user/index',$data);
     }
     public function profile(){
         
-        // $data['judul']='Edit profile';
         // $this->load->view('template/header',$data);
         // $this->load->view('user/profile');
         $data['user']=$this->db->get_where('user',['email'=>
@@ -25,6 +27,7 @@ class User extends CI_Controller{
         $this->form_validation->set_rules('bio_baru','Bio Baru',
         'required|trim');
         if($this->form_validation->run()==false){
+            $data['judul']='Edit profile';
             $this->load->view('template/header',$data);
             $this->load->view('user/profile');
 
